@@ -12,7 +12,8 @@ export default function Home() {
       </header>
       <div className="h-full w-full flex flex-col justify-center items-center">
         <div className="h-fit w-fit flex flex-col justify-center items-center gap-4 pb-6">
-          <img src="ego.svg"
+          <Image src="ego.svg"
+            height={160}
             width={160}
             alt="Ego logo"
             style={{
