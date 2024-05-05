@@ -71,7 +71,7 @@ export default function Home() {
           {
             features.map(feat => {
               return <div className="bg-[#13131381] h-36 w-full rounded-xl grid place-items-center duration-150 ease-in-out
-                outline outline-[0px] outline-transparent hover:outline-[#1C1C1C] hover:outline-8 px-10">
+                outline outline-[0px] outline-transparent md:hover:outline-[#1C1C1C] hover:outline-8 px-10">
                 <p className="text-3xl text-center font-semibold my-4">{feat.desc}</p>
               </div>
             })
