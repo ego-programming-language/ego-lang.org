@@ -64,9 +64,9 @@ export default function Home() {
       <p className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4 text-5xl 
         text-center font-semibold mt-4 mb-28"
       >multipurpose programming language <br /> powered by <span className="text-[#FF7347] underline">rust</span></p>
-      <div className="relative h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4">
-        <p className="text-5xl text-center font-semibold mt-4 mb-9">Features</p>
-        <div className="grid grid-cols-1 grid-rows-4 h-fit w-full gap-5 sm:grid-cols-1 sm:grid-rows-4 
+      <div className="relative h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4 mb-24">
+        <p className="relative text-5xl text-center font-semibold mt-4 mb-9">Features</p>
+        <div className="relative grid grid-cols-1 grid-rows-4 h-fit w-full gap-5 sm:grid-cols-1 sm:grid-rows-4 
           md:grid-cols-2 md:grid-rows-2">
           {
             features.map(feat => {
@@ -86,11 +86,30 @@ export default function Home() {
             rounded-br-[500px] -rotate-[-40deg] blur-2xl h-[400px] w-[400px] z-[-1]"
         />
       </div>
-      <footer className="flex flex-row h-fit w-full justify-center items-center pb-20">
+      <footer className="flex flex-row h-fit w-full justify-center items-center">
         <a
           href="https://github.com/noreplydev/ego"
-          className="underline"
-        >github</a>
+          className="flex flex-row  h-fit w-fit bg-white rounded-lg outline outline-[0px] 
+            outline-transparent md:hover:outline-[#2c2c2c] hover:outline-8 duration-150 ease-in-out"
+        >
+          <div className="w-fit h-full grid place-items-center border-r-[1px] py-3 px-3.5
+            border-solid border-[#ececec] ">
+            <Image src="github.svg"
+              height={18}
+              width={18}
+              alt="github icon"
+            />
+          </div>
+          <div className="w-24 min-h-full flex flex-row justify-center items-center rounded-r-lg 
+            gap-2 bg-[#e3e3e3] cursor-pointer">
+            <Image src="star.svg"
+              height={15}
+              width={15}
+              alt="github star"
+            />
+            <p className={jetbrains.className + ` font-light text-center text-[#898989]`}>star</p>
+          </div>
+        </a>
       </footer>
     </main >
   );
