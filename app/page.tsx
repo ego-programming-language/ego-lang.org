@@ -2,7 +2,22 @@ import { JetBrains_Mono } from "next/font/google";
 import Image from "next/image";
 const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
+const features = [
+  {
+    desc: "dynamic types",
+  },
+  {
+    desc: "first class functions",
+  },
+  {
+    desc: "no rare type coercion",
+  },
+  {
+    desc: "simple by design",
+  },
+]
 export default function Home() {
+
   return (
     <main className="flex h-screen w-screen flex-col 
       items-center justify-start overflow-x-hidden">
@@ -46,8 +61,23 @@ export default function Home() {
         ></div>
         <h1 className="text-[300px] absolute bottom-[-80px]">ego</h1>
       </div>
-      <div>
-        <p className="text-5xl text-center font-semibold my-4">multipurpose programming langugae <br /> powered by <span className="text-[#FF7347] underline">rust</span></p>
+      <p className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4 text-5xl 
+        text-center font-semibold mt-4 mb-28"
+      >multipurpose programming language <br /> powered by <span className="text-[#FF7347] underline">rust</span></p>
+      <div className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4">
+        <p className="text-5xl text-center font-semibold mt-4 mb-9">Features</p>
+        <div className="grid grid-cols-1 grid-rows-4 h-fit w-full gap-5 sm:grid-cols-1 sm:grid-rows-4 
+          md:grid-cols-2 md:grid-rows-2">
+          {
+            features.map(feat => {
+              return <div className="bg-[#131313] h-36 w-full rounded-xl grid place-items-center duration-150 ease-in-out
+                outline outline-[0px] outline-transparent hover:outline-[#0056ff] hover:outline-2 px-10">
+                <p className="text-3xl text-center font-semibold my-4">{feat.desc}</p>
+              </div>
+            })
+          }
+
+        </div>
       </div>
       <footer className="flex flex-row h-fit w-full justify-center items-center pb-20">
         <a
