@@ -23,6 +23,27 @@ export default function Home() {
           }}
           className="absolute bottom-[150px]"
         />
+        {/* round line */}
+        <div
+          className="absolute h-[340px] w-[360px] bg-transparent
+            bottom-[120px] border-solid border-[#0056ff] border-2 rounded-[80px] opacity-[90%]"
+        ></div>
+        <div
+          className="absolute h-[420px] w-[440px] bg-transparent
+            bottom-[80px] border-solid border-[#0056ff] border-2 rounded-[100px] opacity-[40%]"
+        ></div>
+        <div
+          className="absolute h-[490px] w-[530px] bg-transparent
+            bottom-[50px] border-solid border-[#0056ff] border-2 rounded-[140px] opacity-[20%]"
+        ></div>
+        <div
+          className="absolute h-[560px] w-[620px] bg-transparent
+            bottom-[20px] border-solid border-[#0056ff] border-2 rounded-[170px] opacity-[10%]"
+        ></div>
+        <div
+          className="absolute h-[630px] w-[700px] bg-transparent
+            bottom-[-15px] border-solid border-[#0056ff] border-2 rounded-[190px] opacity-[5%]"
+        ></div>
         <h1 className="text-[300px] absolute bottom-[-80px]">ego</h1>
       </div>
       <footer className="flex flex-row h-fit w-full justify-center items-center pb-20">
