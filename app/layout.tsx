@@ -3,7 +3,6 @@ import { JetBrains_Mono, Syne } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-export const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ego",

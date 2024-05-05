@@ -1,5 +1,6 @@
+import { JetBrains_Mono } from "next/font/google";
 import Image from "next/image";
-import { jetbrains } from "./layout";
+const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
