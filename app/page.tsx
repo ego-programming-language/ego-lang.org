@@ -4,26 +4,33 @@ const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-start p-10">
+    <main className="flex h-screen w-screen flex-col 
+      items-center justify-start overflow-x-hidden">
       <header
-        className={jetbrains.className + " h-fit w-fit flex px-10 py-3 bg-[#131313] rounded-lg border-solid border-[#2D2D2D] border-[1px] font-thin text-center"}
+        className={jetbrains.className + ` fixed h-fit w-fit flex px-10 py-3 bg-[#131313c8] rounded-lg border-solid border-[#2D2D2D]
+           border-[1px] font-thin text-center m-10 z-10`}
       >
         🚧 actively building alpha-v0.1
       </header>
-      <div className="h-full w-full flex flex-col justify-center items-center">
-        <div className="h-fit w-fit flex flex-col justify-center items-center gap-4 pb-6">
-          <Image src="ego.svg"
-            height={160}
-            width={160}
-            alt="Ego logo"
-            style={{
-              boxShadow: "0px 0px 50px -5px #0056ff",
-              borderRadius: "40px"
-            }} />
-          <h1 className="text-5xl">ego</h1>
-        </div>
-        <p className="text-2xl font-[400]  text-center">multipurpose programming language  <br />powered by rust</p>
+      <div className="relative min-h-screen w-full flex flex-col justify-center items-center mb-20">
+        <Image src="ego.svg"
+          height={300}
+          width={300}
+          alt="Ego logo"
+          style={{
+            boxShadow: "0px 0px 100px 0px #0056ff",
+            borderRadius: "63px",
+          }}
+          className="absolute bottom-[150px]"
+        />
+        <h1 className="text-[300px] absolute bottom-[-80px]">ego</h1>
       </div>
+      <footer className="flex flex-row h-fit w-full justify-center items-center pb-20">
+        <a
+          href="https://github.com/noreplydev/ego"
+          className="underline"
+        >github</a>
+      </footer>
     </main >
   );
 }
