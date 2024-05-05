@@ -19,7 +19,7 @@ const features = [
 export default function Home() {
 
   return (
-    <main className="flex h-screen w-screen flex-col 
+    <main className="relative flex h-screen w-screen flex-col 
       items-center justify-start overflow-x-hidden">
       <header
         className={jetbrains.className + ` fixed h-fit w-fit flex px-10 py-3 bg-[#131313c8] rounded-lg border-solid border-[#2D2D2D]
@@ -64,20 +64,27 @@ export default function Home() {
       <p className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4 text-5xl 
         text-center font-semibold mt-4 mb-28"
       >multipurpose programming language <br /> powered by <span className="text-[#FF7347] underline">rust</span></p>
-      <div className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4">
+      <div className="relative h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4">
         <p className="text-5xl text-center font-semibold mt-4 mb-9">Features</p>
         <div className="grid grid-cols-1 grid-rows-4 h-fit w-full gap-5 sm:grid-cols-1 sm:grid-rows-4 
           md:grid-cols-2 md:grid-rows-2">
           {
             features.map(feat => {
-              return <div className="bg-[#131313] h-36 w-full rounded-xl grid place-items-center duration-150 ease-in-out
-                outline outline-[0px] outline-transparent hover:outline-[#0056ff] hover:outline-2 px-10">
+              return <div className="bg-[#13131381] h-36 w-full rounded-xl grid place-items-center duration-150 ease-in-out
+                outline outline-[0px] outline-transparent hover:outline-[#1C1C1C] hover:outline-8 px-10">
                 <p className="text-3xl text-center font-semibold my-4">{feat.desc}</p>
               </div>
             })
           }
 
         </div>
+        <div
+          style={{
+            boxShadow: "0px 0px 100px 0px #FF7347",
+          }}
+          className="absolute flex top-[50%] left-[-70%] bg-[#FF7347] rounded-l-[100px] 
+            rounded-br-[500px] -rotate-[-40deg] blur-2xl h-[400px] w-[400px] z-[-1]"
+        />
       </div>
       <footer className="flex flex-row h-fit w-full justify-center items-center pb-20">
         <a
