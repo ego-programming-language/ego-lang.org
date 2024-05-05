@@ -1,20 +1,44 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    content: [
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+        extend: {
+            animation: {
+                "on": "on-anim 0.6s ease-in-out forwards 1s",
+                "on-1": "on-anim-1 0.6s ease-in-out forwards 1.3s",
+                "on-2": "on-anim-2 0.6s ease-in-out forwards 1.6s",
+                "on-3": "on-anim-3 0.6s ease-in-out forwards 1.8s",
+                "on-4": "on-anim-4 0.6s ease-in-out forwards 2s",
+            },
+            keyframes: {
+                'on-anim': {
+                    '0%': { opacity: "0" },
+                    '100%': { opacity: "90%" },
+                },
+                'on-anim-1': {
+                    '0%': { opacity: "0" },
+                    '100%': { opacity: "40%" },
+                },
+                'on-anim-2': {
+                    '0%': { opacity: "0" },
+                    '100%': { opacity: "20%" },
+                },
+                'on-anim-3': {
+                    '0%': { opacity: "0" },
+                    '100%': { opacity: "10%" },
+                },
+                'on-anim-4': {
+                    '0%': { opacity: "0" },
+                    '100%': { opacity: "5%" },
+                }
+            }
+        },
     },
-  },
-  plugins: [],
+    plugins: [],
 };
 export default config;
