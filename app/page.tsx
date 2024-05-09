@@ -22,10 +22,36 @@ export default function Home() {
     <main className="relative flex h-screen w-screen flex-col 
       items-center justify-start overflow-x-hidden">
       <header
-        className={jetbrains.className + ` fixed h-fit w-fit flex px-10 py-3 bg-[#131313c8] rounded-lg border-solid border-[#2D2D2D]
-           border-[1px] font-thin text-center m-10 z-10`}
+        className={jetbrains.className + ` fixed h-fit w-fit flex flex-row justify-center items-center m-10 z-10 gap-4`}
       >
-        🚧 actively building alpha-v0.1
+        <div
+          className="h-fit w-fit flex px-10 py-3 bg-[#131313c8] rounded-lg border-solid border-[#2D2D2D]
+          border-[1px] font-thin text-center"
+        >🚧 actively building alpha-v0.1</div>
+        <a
+          href="https://github.com/noreplydev/ego"
+          className="flex-row  h-fit w-fit bg-white rounded-lg outline outline-[0px] 
+            outline-transparent md:hover:outline-[#2c2c2c] hover:outline-8 duration-150 ease-in-out
+            hidden md:flex lg:flex xl:flex"
+        >
+          <div className="w-fit h-full grid place-items-center border-r-[1px] py-3 px-3.5
+            border-solid border-[#ececec] ">
+            <Image src="github.svg"
+              height={18}
+              width={18}
+              alt="github icon"
+            />
+          </div>
+          <div className="w-24 min-h-full flex flex-row justify-center items-center rounded-r-lg 
+            gap-2 bg-[#e3e3e3] cursor-pointer">
+            <Image src="star.svg"
+              height={15}
+              width={15}
+              alt="github star"
+            />
+            <p className={jetbrains.className + ` font-light text-center text-[#898989]`}>star</p>
+          </div>
+        </a>
       </header>
       <div className="relative min-h-screen w-full flex flex-col justify-center items-center mb-20">
         <Image src="ego.svg"
@@ -86,30 +112,19 @@ export default function Home() {
             rounded-br-[500px] -rotate-[-40deg] blur-2xl h-[400px] w-[400px] z-[-1]"
         />
       </div>
-      <footer className="flex flex-row h-fit w-full justify-center items-center">
-        <a
-          href="https://github.com/noreplydev/ego"
-          className="flex flex-row  h-fit w-fit bg-white rounded-lg outline outline-[0px] 
-            outline-transparent md:hover:outline-[#2c2c2c] hover:outline-8 duration-150 ease-in-out"
-        >
-          <div className="w-fit h-full grid place-items-center border-r-[1px] py-3 px-3.5
-            border-solid border-[#ececec] ">
-            <Image src="github.svg"
-              height={18}
-              width={18}
-              alt="github icon"
-            />
-          </div>
-          <div className="w-24 min-h-full flex flex-row justify-center items-center rounded-r-lg 
-            gap-2 bg-[#e3e3e3] cursor-pointer">
-            <Image src="star.svg"
-              height={15}
-              width={15}
-              alt="github star"
-            />
-            <p className={jetbrains.className + ` font-light text-center text-[#898989]`}>star</p>
-          </div>
-        </a>
+      <p className="relative text-5xl text-center font-semibold mt-4 mb-9"></p>
+      <footer className="flex flex-col h-fit w-full justify-center items-center gap-3 mb-20">
+        <p className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4 text-2xl 
+        text-center font-semibold "
+        >Get notified about <span className="text-[#0056ff]">ego </span> releases</p>
+        <p className={jetbrains.className + ` text-lg font-light text-center text-[#898989]`}>We will only notify you about ego <br />new stable releases</p>
+        <div className="flex flex-row pl-5 pr-2 py-2 bg-[#131313] gap-3 rounded-xl w-full md:w-1/4 lg:w-1/4 xl:w-1/4 ">
+          <input placeholder="self@ego-lang.org" className={jetbrains.className + ` bg-transparent outline-none border-none text-lg
+            w-full placeholder:text-[#494949]` } />
+          <button
+            className={jetbrains.className + ` hover:bg-[#1F1F1F] rounded-lg px-2 py-2`}
+          >subscribe</button>
+        </div>
       </footer>
     </main >
   );
