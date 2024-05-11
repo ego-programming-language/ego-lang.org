@@ -1,6 +1,8 @@
+import { EmailInput } from "@/components/root/EmailInput";
 import { JetBrains_Mono } from "next/font/google";
 import Image from "next/image";
 const jetbrains = JetBrains_Mono({ subsets: ["latin"] });
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 const features = [
   {
@@ -17,6 +19,42 @@ const features = [
   },
 ]
 export default function Home() {
+  // Server Action
+  async function subscribeEmail(event: FormData) {
+    'use server'
+
+    let email = String(event.get('email'))
+    let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+    if (!regex.test(email)) return
+
+    const uri = process.env.MONGO_URI;
+    if (!uri) return
+
+    const client = new MongoClient(uri, {
+      serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+      }
+    });
+
+    async function run(email: string) {
+      try {
+        await client.connect() // Connect the client to the server (optional starting in v4.7)
+        const db = client.db("db");
+        const emails = db.collection("emails");
+        const doc = { email, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone };
+        const result = await emails.insertOne(doc);
+        console.log(
+          `A document was inserted with the _id: ${result.insertedId}`,
+        );
+      } finally {
+        await client.close();
+      }
+    }
+
+    await run(email).catch(console.dir);
+  }
 
   return (
     <main className="relative flex h-screen w-screen flex-col 
@@ -118,14 +156,8 @@ export default function Home() {
         text-center font-semibold "
         >Get notified about <span className="text-[#0056ff]">ego </span> releases</p>
         <p className={jetbrains.className + ` text-base font-light text-center text-[#898989]`}>We will only notify you about ego <br />new stable releases</p>
-        <form className="flex flex-row pl-5 pr-2 py-2 bg-[#131313] gap-3 rounded-xl w-full md:w-1/3 lg:w-1/3 xl:w-1/3 ">
-          <input placeholder="self@ego-lang.org" className={jetbrains.className + ` bg-transparent outline-none border-none text-base
-            w-full placeholder:text-[#494949]` } />
-          <button
-            className={jetbrains.className + ` hover:bg-[#1F1F1F] rounded-lg px-2 py-2`}
-          >subscribe</button>
-        </form>
+        <EmailInput font={jetbrains.className} subscribeEmail={subscribeEmail} />
       </footer>
     </main >
   );
-}
+} 
