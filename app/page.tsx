@@ -113,18 +113,18 @@ export default function Home() {
         />
       </div>
       <p className="relative text-5xl text-center font-semibold mt-4 mb-9"></p>
-      <footer className="flex flex-col h-fit w-full justify-center items-center gap-3 mb-20">
+      <footer className="flex flex-col h-fit w-full justify-center items-center gap-3 mb-20 px-5">
         <p className="h-fit w-full px-5 md:w-2/4 lg:w-2/4 xl:w-2/4 text-2xl 
         text-center font-semibold "
         >Get notified about <span className="text-[#0056ff]">ego </span> releases</p>
-        <p className={jetbrains.className + ` text-lg font-light text-center text-[#898989]`}>We will only notify you about ego <br />new stable releases</p>
-        <div className="flex flex-row pl-5 pr-2 py-2 bg-[#131313] gap-3 rounded-xl w-full md:w-1/4 lg:w-1/4 xl:w-1/4 ">
-          <input placeholder="self@ego-lang.org" className={jetbrains.className + ` bg-transparent outline-none border-none text-lg
+        <p className={jetbrains.className + ` text-base font-light text-center text-[#898989]`}>We will only notify you about ego <br />new stable releases</p>
+        <form className="flex flex-row pl-5 pr-2 py-2 bg-[#131313] gap-3 rounded-xl w-full md:w-1/3 lg:w-1/3 xl:w-1/3 ">
+          <input placeholder="self@ego-lang.org" className={jetbrains.className + ` bg-transparent outline-none border-none text-base
             w-full placeholder:text-[#494949]` } />
           <button
             className={jetbrains.className + ` hover:bg-[#1F1F1F] rounded-lg px-2 py-2`}
           >subscribe</button>
-        </div>
+        </form>
       </footer>
     </main >
   );
