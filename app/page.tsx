@@ -25,10 +25,10 @@ export default function Home() {
 
     let email = String(event.get('email'))
     let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
-    if (!regex.test(email)) return
+    if (!regex.test(email)) return false
 
     const uri = process.env.MONGO_URI;
-    if (!uri) return
+    if (!uri) return false
 
     const client = new MongoClient(uri, {
       serverApi: {
@@ -38,7 +38,7 @@ export default function Home() {
       }
     });
 
-    async function run(email: string) {
+    async function save_email(email: string) {
       try {
         await client.connect() // Connect the client to the server (optional starting in v4.7)
         const db = client.db("db");
@@ -53,7 +53,9 @@ export default function Home() {
       }
     }
 
-    await run(email).catch(console.dir);
+    return await save_email(email)
+      .then(() => { return true })
+      .catch(() => { return false });
   }
 
   return (
