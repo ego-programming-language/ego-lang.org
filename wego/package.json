@@ -1,0 +1,14 @@
+{
+  "name": "ego",
+  "version": "0.0.0-alpha.0.1",
+  "files": [
+    "ego_bg.wasm",
+    "ego.js",
+    "ego.d.ts"
+  ],
+  "module": "ego.js",
+  "types": "ego.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
