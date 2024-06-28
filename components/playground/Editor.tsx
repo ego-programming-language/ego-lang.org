@@ -5,7 +5,7 @@ import init, { exec_ego_code } from '../../wego/ego.js';
 export function EgoCodeEditor() {
   const [egoCode, setEgoCode] = useState("");
   const [executionOutput, setExecutionOutput] = useState<string[][]>([]);
-  const [executionIndex, setExecutionIndex] = useState<number>(null);
+  const [executionIndex, setExecutionIndex] = useState<number | null>(null);
   useEffect(() => {
     const run = async () => {
       await init();
@@ -17,7 +17,7 @@ export function EgoCodeEditor() {
   const runEgo = (code: string, vm: boolean) => {
     let output = exec_ego_code(code, vm);
     setExecutionOutput((prev) => { prev.push(output); return prev })
-    setExecutionIndex((prev) => prev + 1)
+    setExecutionIndex((prev) => (prev ?? 0) + 1)
   }
 
   return <div className='flex flex-col justify-start items-start w-full h-full bg-[#131313]
