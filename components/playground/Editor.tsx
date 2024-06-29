@@ -15,9 +15,15 @@ export function EgoCodeEditor() {
   }, [])
 
   const runEgo = (code: string, vm: boolean) => {
-    let output = exec_ego_code(code, vm);
-    setExecutionOutput((prev) => { prev.push(output); return prev })
-    setExecutionIndex((prev) => (prev ?? 0) + 1)
+    try {
+      let output = exec_ego_code(code, vm);
+      setExecutionOutput((prev) => { prev.push(output); return prev })
+      setExecutionIndex((prev) => (prev ?? 0) + 1)
+    } catch (e) {
+      console.error("Couldn't run ego code ", e)
+      setExecutionOutput((prev) => { prev.push(["Execution error"]); return prev })
+      setExecutionIndex((prev) => (prev ?? 0) + 1)
+    }
   }
 
   return <div className='flex flex-col justify-start items-start w-full h-full bg-[#131313]
