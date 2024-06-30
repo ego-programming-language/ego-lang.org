@@ -57,7 +57,9 @@ greet("Cristian")
     <div className='w-full h-96 flex flex-col border-[1px] bg-[#1B1B1B]
       border-solid border-[#2D2D2D]
       rounded-md text-[#00ff41] overflow-scroll'>
-      <div className='h-fit w-full p-2 border-b-solid border-b-[1px] border-b-[#2D2D2D]'>
+      <div className='h-fit w-full flex flex-row p-2 border-b-solid border-b-[1px] border-b-[#2D2D2D] 
+        items-center gap-1'>
+        <img src='/console.svg' alt='ego logo' className='h-7 w-auto' />
         <p className='text-[#5F5F5F] text-lg'>console</p>
       </div>
       <div className='h-full w-ful overflow-scroll px-5 py-3'>
