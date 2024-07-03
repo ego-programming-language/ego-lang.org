@@ -16,7 +16,7 @@ export function EmailInput({ font, subscribeEmail }: { font: string, subscribeEm
   }} ref={ref}>
     <input placeholder="self@ego-lang.org" className={font + ` bg-transparent outline-none border-none text-base
     w-full placeholder:text-[#494949]` } name='email' type="email" ref={inputRef} />
-    <button className={font + ` hover:bg-[#1F1F1F] rounded-lg px-2 py-2`}
+    <button className={font + ` hover:bg-[#1F1F1F] rounded-lg px-3.5 py-2`}
     >subscribe</button>
   </form>
 }
