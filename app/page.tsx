@@ -69,7 +69,7 @@ export default function Home() {
           border-[1px] font-thin text-center"
         >🚧 actively building alpha-v0.1</div>
         <a
-          href="https://github.com/noreplydev/ego"
+          href="https://github.com/ego-programming-language"
           className="flex-row  h-fit w-fit bg-white rounded-lg outline outline-[0px] 
             outline-transparent md:hover:outline-[#2c2c2c] hover:outline-8 duration-150 ease-in-out
             hidden md:flex lg:flex xl:flex"
